@@ -6,6 +6,23 @@ namespace NieuweCsharpFunctionaliteiten.Domain
 {
     public static class Bookrepository
     {
+        public static Book[] GetBooksFromarray()
+        {
+            return new Book[]
+            {
+                new Book{
+                    Id=1,
+                    Title="C# .Net Core",
+                    Publisher="Microsoft Media Ltd"
+                },
+                new Book{
+                    Id=2,
+                    Title="PHP MV Laravel",
+                    Publisher="O'Reilly"
+                },
+            };
+        }
+        //returns a List<book>
         public static List<Book> GetBooks()
         {
             //make everything with initializer

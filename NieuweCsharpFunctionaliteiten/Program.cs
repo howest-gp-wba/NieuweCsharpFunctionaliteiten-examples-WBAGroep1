@@ -1,6 +1,7 @@
 ﻿using NieuweCsharpFunctionaliteiten.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NieuweCsharpFunctionaliteiten
 {
@@ -14,22 +15,36 @@ namespace NieuweCsharpFunctionaliteiten
             cheese.Id = 1;
             cheese.Sequel = null;
             string title = null;
-           
 
-            
+
+
             Console.WriteLine(cheese?.Sequel?.Title);
             //get all books in Db
-            List<Book> books = Bookrepository.GetBooks();
-            string result = "";
-            
-            foreach(Book book in books)
+            IEnumerable<Book> books =
+                Bookrepository.GetBooks();
+            books = Bookrepository.GetBooksFromarray();
+            //find books with letter C
+
+            //use Where with named function
+            IEnumerable<Book> booksWithC
+                = books.Where(FilterBooksWithC);
+            //use with anonymous
+            booksWithC = books.Where(
+                b => b.Title.Contains("C")
+            );
+            foreach(Book book in booksWithC)
             {
-                //string interpolatie+null coalesence + conditional operator
-                result = $"Title: " +
-                    $"{book?.Title??"<NoTitle>\n"}" +
-                    $"Id: {book?.Id ?? 0}\n";
-                Console.WriteLine(result);
+                Console.WriteLine(book?.Title);
             }
+
+            }
+
+        private static bool FilterBooksWithC(Book book)
+        {
+            if (book?.Title.Contains("C") == true)
+                return true;
+            else
+                return false;
         }
     }
 }
