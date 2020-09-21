@@ -9,6 +9,6 @@ namespace NieuweCsharpFunctionaliteiten.Domain
         public long? Id { get; set; }
         public string Title { get; set; }
         public Book Sequel { get; set; }
-        
+        public string Publisher { get; set; }
     }
 }
