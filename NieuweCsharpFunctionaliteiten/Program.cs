@@ -16,8 +16,6 @@ namespace NieuweCsharpFunctionaliteiten
             cheese.Sequel = null;
             
 
-
-
             Console.WriteLine(cheese?.Sequel?.Title);
             //get all books in Db
             IEnumerable<Book> books =
@@ -36,7 +34,6 @@ namespace NieuweCsharpFunctionaliteiten
             {
                 Console.WriteLine(book?.Title);
             }
-
         }
 
         private static bool FilterBooksWithC(Book book)
