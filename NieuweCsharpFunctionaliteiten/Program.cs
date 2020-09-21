@@ -14,7 +14,7 @@ namespace NieuweCsharpFunctionaliteiten
             cheese.Title = "Kaas";
             cheese.Id = 1;
             cheese.Sequel = null;
-            string title = null;
+            
 
 
 
@@ -37,7 +37,7 @@ namespace NieuweCsharpFunctionaliteiten
                 Console.WriteLine(book?.Title);
             }
 
-            }
+        }
 
         private static bool FilterBooksWithC(Book book)
         {
