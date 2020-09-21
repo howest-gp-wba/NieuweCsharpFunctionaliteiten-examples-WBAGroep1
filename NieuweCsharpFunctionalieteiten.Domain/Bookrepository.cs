@@ -8,14 +8,20 @@ namespace NieuweCsharpFunctionaliteiten.Domain
     {
         public static List<Book> GetBooks()
         {
+            //object initializer
+            Book lotr = new Book
+            {
+                Id = 0,
+                Title = "fellowship of the ring,",
+                Sequel = null
+            };
+            //make new list of books
             List<Book> books = new List<Book>();
-            Book lotr = new Book();
+            //make new books
             Book lotr2 = new Book();
             Book lotr3 = new Book();
             Book lotr4 = null;
-            lotr.Title = "Fellowship of the ring";
-            lotr.Id = null;
-            lotr.Sequel = lotr2;
+            //fill the data
             lotr2.Id = 2;
             lotr2.Sequel = lotr3;
             lotr2.Title 
@@ -25,7 +31,6 @@ namespace NieuweCsharpFunctionaliteiten.Domain
             lotr3.Sequel = lotr4;
             
             //add to list
-            books.Add(lotr);         
             books.Add(lotr2);         
             books.Add(lotr3);
             books.Add(lotr4);
