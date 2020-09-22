@@ -15,7 +15,7 @@ namespace NieuweCsharpFunctionaliteiten
         {
             Console.WriteLine("Conan the librarian");
             Book cheese = new Book();
-            cheese.Title = "Kaas";
+            cheese.Title = "Cheese";
             cheese.Id = 1;
             cheese.Sequel = null;
             
